@@ -38,24 +38,25 @@ app = Flask(__name__)
 def welcome():
     """List all available api routes."""
     return (
+        f"Welcome to the Climate App API!<br>"
         f"Available Routes:<br/>"
-        f"/api/v1.0/date/precipitation_on_date/<date><br/>"
+        f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/temperature<br/>"
-        f"/api/v1.0/temperature_given_start_date/<date><br/>"
-        f"/api/v1.0/temperature_given_start_end/<date_start>/<date_end>"
+        f"/api/v1.0/tobs<br/>"
+        f"/api/v1.0/start<br/>"
+        f"/api/v1.0/start/end<br/>"
     )
 
 #@app.route("/api/v1.0/date/precipitation/<date>")
-@app.route("/api/v1.0/date/precipitation_on_date/<date>")
-def precipitation(date):
+@app.route("/api/v1.0/date/precipitation")
+def precipitation():
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
     """Return a list of precipitation amounts"""
     # Query all precipitation amounts
     #rainfall = session.query(Measurement.date, Measurement.prcp).filter(func.strftime("%y-%m-%d", Measurement.date == date).all()
-    rainfall = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date == date).all()
+    last_measurement_data_point = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date == date).all()
 
     session.close()
 
