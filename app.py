@@ -90,7 +90,8 @@ def tobs():
     # Calculate the date 1 year ago from the last data point in the database.
     last_measurement_data_point = session.query(
         Measurement.date).order_by(Measurement.date.desc()).first()
-    (latest_date, ) = last_measurement_data_point
+    
+    latest_date = temp_observation [0]
     latest_date = dt.datetime.strptime(latest_date, '%Y-%m-%d')
     latest_date = latest_date.date()
     date_year_ago = latest_date - relativedelta(years=1)
@@ -102,7 +103,7 @@ def tobs():
         first()
 
     # Get the station id of the most active station.
-    (most_active_station_id, ) = most_active_station
+    most_active_station_id = most_active_station [0]
     print(f"The station id of the most active station is {most_active_station_id}.")
 
     # Perform a query to retrieve the data and temperature scores for the most active station from the last year.
