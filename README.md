@@ -49,10 +49,11 @@ To begin, I used Python and SQLAlchemy to do basic climate analysis and data exp
   * Filtered by the station with the highest number of observations.
 
   * Ploted the results as a histogram with `bins=12`.
+  
+  ![frequency](https://user-images.githubusercontent.com/66078772/95898956-6dc5e880-0d55-11eb-8828-a9e7dffb0d7e.png)
 
-    ![station-histogram](Images/station-histogram.png)
 
-- - -
+ - - -
 
 ## Step 2 - Climate App
 
