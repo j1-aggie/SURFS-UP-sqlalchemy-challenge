@@ -123,6 +123,8 @@ Null hypothesis - there is no meaningful difference between the temperature in J
 
 ![June vs December Scatter Plot](https://user-images.githubusercontent.com/66078772/95900342-5be54500-0d57-11eb-8485-9541874bda01.png)
 
+![june_dec_histogram](https://user-images.githubusercontent.com/66078772/95900523-a5ce2b00-0d57-11eb-8dc8-2b93173095e0.png)
+
 
 ### Temperature Analysis II
 
