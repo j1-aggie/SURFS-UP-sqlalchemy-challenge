@@ -58,25 +58,25 @@ def precipitation():
     """Return a list of precipitation amounts"""
     # Query all precipitation amounts
     #rainfall = session.query(Measurement.date, Measurement.prcp).filter(func.strftime("%y-%m-%d", Measurement.date == date).all()
-    last_measurement_data_point = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date == date).all()
+    last_measurement_data_point = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
      
-    (latest_date, ) = last_measurement_data_point
+    latest_date = last_measurement_data_point [0]
     latest_date = dt.datetime.strptime(latest_date, '%Y-%m-%d')
     latest_date = latest_date.date()
     date_year_ago = latest_date - relativedelta(years=1)
 
     # Perform a query to retrieve the data and precipitation scores.
-    data_from_last_year = session.query(Measurement.date, Measurement.prcp).filter(
+    last_year_data = session.query(Measurement.date, Measurement.prcp).filter(
         Measurement.date >= date_year_ago).all()
     session.close()
 
  # Create a dictionary from the row data and append to a list of dates and precipitation
     all_precipitation = []
-    for date, prcp in data_from_last_year:
+    for date, prcp in last_year_data:
         if prcp != None:
             precip_dict = {}
             precip_dict[date] = prcp
-            all_precipication.append(precip_dict)
+            all_precipitation.append(precip_dict)
 
     return jsonify(all_precipitation)
 
@@ -88,7 +88,7 @@ def tobs():
     session = Session(engine)
 
     # Calculate the date 1 year ago from the last data point in the database.
-    last_measurement_data_point = session.query(
+    temp_observation = session.query(
         Measurement.date).order_by(Measurement.date.desc()).first()
     
     latest_date = temp_observation [0]
@@ -136,7 +136,7 @@ def stations():
 
     # Convert the query results to a dictionary.
     all_stations = []
-for station, name, latitude, longitude, elevation in stations:
+    for station, name, latitude, longitude, elevation in stations:
         station_dict = {}
         station_dict["station"] = station
         station_dict["name"] = name
@@ -152,9 +152,9 @@ for station, name, latitude, longitude, elevation in stations:
 @app.route('/api/v1.0/<start>', defaults={'end': None})
 @app.route("/api/v1.0/<start>/<end>")
 def determine_temps_for_date_range(start, end):
-    """Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range."""
-    """When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date."""
-    """When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive."""
+    """Return a JSON list of the minimum temperature, the average temperature, and the        max temperature for a given start or start-end range."""
+    """When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater        than and equal to the start date."""
+    """When given the start and the end date, calculate the TMIN, TAVG, and TMAX for          dates between the start and end date inclusive."""
     # Create our session (link) from Python to the DB.
     session = Session(engine)
 
