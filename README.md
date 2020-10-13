@@ -113,6 +113,13 @@ Once I completed the initial analysis, I designed a Flask API based on the queri
 
 * Used the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
 
+Ttest_indResult(statistic=31.355036920962423, pvalue=4.193529835915755e-187).
+It is a statistically significant difference in means (p-value of less than 0.05).
+Very small value - means of these two populations are significantly different.
+Lower probability that the difference is random.
+Reject the null hypothesis.
+Null hypothesis - there is no meaningful difference between the temperature in June and December in Hawaii.
+
 ### Temperature Analysis II
 
 * Used the function called `calc_temps` that will accept a start date and end date in the format `%Y-%m-%d`. The function returned the minimum, average, and maximum temperatures for that range of dates.
