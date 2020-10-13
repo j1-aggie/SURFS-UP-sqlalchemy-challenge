@@ -121,6 +121,9 @@ Lower probability that the difference is random.
 Reject the null hypothesis.
 Null hypothesis - there is no meaningful difference between the temperature in June and December in Hawaii.
 
+![June vs December Scatter Plot](https://user-images.githubusercontent.com/66078772/95900342-5be54500-0d57-11eb-8485-9541874bda01.png)
+
+
 ### Temperature Analysis II
 
 * Used the function called `calc_temps` that will accept a start date and end date in the format `%Y-%m-%d`. The function returned the minimum, average, and maximum temperatures for that range of dates.
