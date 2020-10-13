@@ -138,7 +138,7 @@ Null hypothesis - there is no meaningful difference between the temperature in J
 
   * Used the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
 
-    ![temperature](Images/temperature.png)
+  ![avg_temp](https://user-images.githubusercontent.com/66078772/95900794-08272b80-0d58-11eb-8e6e-27d6856e2520.png)
 
 ### Daily Rainfall Average
 
