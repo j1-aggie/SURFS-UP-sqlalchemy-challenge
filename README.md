@@ -1,31 +1,30 @@
 # SQLAlchemy Homework - Surfs Up!
 
-Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
+For this homework, we are going to Honolulu, Hawaii! To help with the trip planning, we had to do some climate analysis on the area. The following outlines what I did.
 
 ## Step 1 - Climate Analysis and Exploration
 
-To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
+To begin, I used Python and SQLAlchemy to do basic climate analysis and data exploration of the provided climate database. All of the following analysis were completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
-* created a panda notebook (climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete climate analysis and data exploration.
+* Ibcreated a panda notebook (climate_starter.ipynb) and used the provided [hawaii.sqlite](Resources/hawaii.sqlite) files to complete climate analysis and data exploration.
 
-* Choose a start date and end date for 
-trip. Make sure that your vacation range is approximately 3-15 days total.
+* I picked a start date and end date for the trip. The trip was within the suggested window of 3-15 days total.
 
-* Use SQLAlchemy `create_engine` to connect to sqlite database.
+* Used SQLAlchemy `create_engine` to connect to sqlite database.
 
-* Use SQLAlchemy `automap_base()` to reflect tables into classes and save a reference to those classes called `Station` and `Measurement`.
+* Used SQLAlchemy `automap_base()` to reflect tables into classes and saved a reference to those classes called `Station` and `Measurement`.
 
 ### Precipitation Analysis
 
-* Design a query to retrieve the last 12 months of precipitation data.
+* Designed a query to retrieve the last 12 months of precipitation data.
 
-* Select only the `date` and `prcp` values.
+* Selected only the `date` and `prcp` values.
 
-* Load the query results into a Pandas DataFrame and set the index to the date column.
+* Loaded the query results into a Pandas DataFrame and set the index to the date column.
 
-* Sort the DataFrame values by `date`.
+* Sorted the DataFrame values by `date`.
 
-* Plot the results using the DataFrame `plot` method.
+* Ploted the results using the DataFrame `plot` method.
 
   ![precipitation](Images/precipitation.png)
 
