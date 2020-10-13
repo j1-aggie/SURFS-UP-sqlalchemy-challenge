@@ -26,7 +26,8 @@ To begin, I used Python and SQLAlchemy to do basic climate analysis and data exp
 
 * Ploted the results using the DataFrame `plot` method.
 
-  ![precipitation](Images/precipitation.png)
+ ![CLIMATE](https://user-images.githubusercontent.com/66078772/95894182-56cfc800-0d4e-11eb-9cd0-5d3d116dec3f.png)
+
 
 * Use Pandas to print the summary statistics for the precipitation data.
 
