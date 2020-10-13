@@ -154,4 +154,4 @@ Null hypothesis - there is no meaningful difference between the temperature in J
 
 * Used Pandas to plot an area plot (`stacked=False`) for the daily normals.
 
-  
+ ![daily_normals](https://user-images.githubusercontent.com/66078772/95900666-d8782380-0d57-11eb-86e3-af1507e00b73.png) 
